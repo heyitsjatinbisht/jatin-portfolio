@@ -35,7 +35,10 @@ const Work = () => {
               Youtube Clone
             </span>
             <div className="pt-8 text-center">
-              <a href="https://game-hub-mu-peach.vercel.app/" target="_blank">
+              <a
+                href="https://youtube-clone-rho-eight.vercel.app/"
+                target="_blank"
+              >
                 <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
                   Live
                 </button>
