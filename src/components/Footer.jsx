@@ -8,7 +8,7 @@ const Footer = () => {
 
       <div className="flex items-center space-x-6 mb-4 sm:mb-0">
         <a
-          href="https://www.linkedin.com/in/your-profile"
+          href="https://www.linkedin.com/in/jatin-bisht-b40a301bb/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300 hover:text-blue-400 transition duration-300"
@@ -16,7 +16,7 @@ const Footer = () => {
           <FaLinkedin size={24} />
         </a>
         <a
-          href="https://github.com/your-profile"
+          href="https://github.com/heyitsjatinbisht"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300 hover:text-white transition duration-300"
@@ -24,7 +24,7 @@ const Footer = () => {
           <FaGithub size={24} />
         </a>
         <a
-          href="https://www.instagram.com/your-profile"
+          href="https://www.instagram.com/jsbisht_21/?next=%2F"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300 hover:text-pink-500 transition duration-300"
