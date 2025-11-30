@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex items-center justify-center bg-[var(--background-color)] text-[var(--text-color)] overflow-hidden relative"
+      className="min-h-screen flex items-center justify-center text-[var(--text-color)] overflow-hidden relative py-20 md:py-0"
       id="hero"
     >
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-7xl">
@@ -21,17 +21,17 @@ const Hero = () => {
           className="order-2 md:order-1 flex flex-col justify-center"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6">
-            <span className="block text-gray-400 text-2xl sm:text-3xl font-medium mb-2">
+            <span className="block text-gray-300 text-2xl sm:text-3xl font-medium mb-2">
               Hello, I'm a
             </span>
-            <span className="primary">Full Stack Developer</span>
+            <span className="primary drop-shadow-lg">Full Stack Developer</span>
           </h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: isInView ? 1 : 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-gray-400 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed"
+            className="text-gray-300 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed"
           >
             Specializing in scalable backend systems, AI integration, and RAG
             architectures. I build intelligent solutions that power the next

@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="max-w-[1200px] p-6 sm:p-12 flex flex-col sm:flex-row justify-between items-center mx-auto bg-black text-white">
+    <div className="max-w-[1200px] p-6 sm:p-12 flex flex-col sm:flex-row justify-between items-center mx-auto text-white">
       <span className="primary text-xl font-bold mb-4 sm:mb-0">J. BISHT</span>
 
       <div className="flex items-center space-x-6 mb-4 sm:mb-0">
