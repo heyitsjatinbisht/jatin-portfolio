@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
-import profileimg from "../assets/profile-pic.png";
-import { TypeAnimation } from "react-type-animation";
+import profileimg from "../assets/profile-pic.jpeg";
 import { motion, useInView } from "framer-motion";
 
 const Hero = () => {
@@ -8,78 +7,78 @@ const Hero = () => {
   const isInView = useInView(ref, { once: false });
 
   return (
-    <motion.div
+    <section
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
-      className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-[1200px] md:h-screen mx-auto py-8 bg-black"
+      className="min-h-screen flex items-center justify-center bg-[var(--background-color)] text-[var(--text-color)] overflow-hidden relative"
+      id="hero"
     >
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -100 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="col-span-1 my-auto mx-auto w-[300px] h-auto lg:w-[400px]"
-      >
-        <img src={profileimg} alt="profile" className="rounded-full" />
-      </motion.div>
+      <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-7xl">
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="order-2 md:order-1 flex flex-col justify-center"
+        >
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6">
+            <span className="block text-gray-400 text-2xl sm:text-3xl font-medium mb-2">
+              Hello, I'm a
+            </span>
+            <span className="primary">Full Stack Developer</span>
+          </h1>
 
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 100 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="col-span-2 px-5 my-auto"
-      >
-        <h1 className="text-white text-3xl sm:text-4xl lg:text-8xl font-extrabold">
-          <motion.span
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: isInView ? 1 : 0 }}
-            transition={{ duration: 1.2, delay: 0.3 }}
-            className="primary"
+            transition={{ duration: 1, delay: 0.4 }}
+            className="text-gray-400 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed"
           >
-            I'm a
-          </motion.span>
-          <br />
-          <TypeAnimation
-            sequence={["Full Stack Developer", 1000, "Web Dev", 1000]}
-            wrapper="span"
-            speed={40}
-            repeat={Infinity}
-          />
-        </h1>
+            Specializing in scalable backend systems, AI integration, and RAG
+            architectures. I build intelligent solutions that power the next
+            generation of applications.
+          </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isInView ? 1 : 0 }}
-          transition={{ duration: 1.5, delay: 0.6 }}
-          className="text-white sm:text-lg my-6 lg:text-xl"
-        >
-          "I'm a passionate full-stack developer focused on building innovative,
-          user-friendly applications that drive growth and enhance digital
-          experiences."
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
-          transition={{ duration: 0.8, delay: 0.9, ease: "easeInOut" }}
-          className="my-8 flex flex-wrap gap-4"
-        >
-          <a
-            href="https://drive.google.com/file/d/1l1VpF8fvBMC2Sh6Vj5FJmNX4zNwOyk6L/view?usp=sharing"
-            className="px-6 py-3 w-full sm:w-auto rounded-xl bg-gradient-to-br from-orange-500 to-pink-500 text-white transition duration-300 hover:bg-gradient-to-bl"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-wrap gap-4"
           >
-            Download CV
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 w-full sm:w-auto rounded-xl border border-gray-400 text-white transition duration-300 hover:bg-gradient-to-br from-orange-500 to-pink-500 hover:border-none"
-          >
-            Contact
-          </a>
+            <a
+              href="https://drive.google.com/file/d/1l1VpF8fvBMC2Sh6Vj5FJmNX4zNwOyk6L/view?usp=sharing"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-pink-600 text-white font-semibold shadow-lg hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              Download CV
+            </a>
+            <a
+              href="#contact"
+              className="px-8 py-3 rounded-full border border-gray-600 text-gray-300 font-semibold hover:border-gray-400 hover:text-white transition-all duration-300"
+            >
+              Contact Me
+            </a>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </motion.div>
+
+        {/* Image Content */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="order-1 md:order-2 flex justify-center items-center relative"
+        >
+          <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px]">
+            {/* Abstract Background Blob */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-pink-600/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+
+            <img
+              src={profileimg}
+              alt="Jatin Bisht"
+              className="w-full h-full object-cover rounded-3xl shadow-2xl border border-gray-800/50 rotate-3 hover:rotate-0 transition-transform duration-500"
+            />
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
