@@ -109,3 +109,38 @@ html {
     display: none;
   }
 }
+
+/* ==================== Shimmer Text Animation ==================== */
+
+/* Shimmer effect for text - creates animated shiny glow */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer-text {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #06b6d4 0%,
+    #06b6d4 35%,
+    #ffffff 50%,
+    #8b5cf6 65%,
+    #8b5cf6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 8s linear infinite;
+  /* Removed text-shadow for crisp, sharp appearance */
+}
+
+/* Slightly faster animation on hover */
+.shimmer-text:hover {
+  animation: shimmer 5s linear infinite;
+}

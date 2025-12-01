@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import profileimg from "../assets/profile-pic.jpeg";
 import { motion, useInView } from "framer-motion";
 
 const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
 
   return (
     <section
@@ -24,7 +25,9 @@ const Hero = () => {
             <span className="block text-gray-300 text-2xl sm:text-3xl font-medium mb-2">
               Hello, I'm a
             </span>
-            <span className="primary drop-shadow-lg">Full Stack Developer</span>
+            <span className="primary drop-shadow-lg shimmer-text">
+              Full Stack Developer
+            </span>
           </h1>
 
           <motion.p
@@ -66,14 +69,43 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="order-1 md:order-2 flex justify-center items-center relative"
         >
-          <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px]">
+          <div
+            className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px]"
+            style={{ perspective: "1000px" }}
+            onMouseMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              const centerX = rect.width / 2;
+              const centerY = rect.height / 2;
+              const rotateX = ((y - centerY) / centerY) * -10;
+              const rotateY = ((x - centerX) / centerX) * 10;
+              setTilt({ rotateX, rotateY });
+            }}
+            onMouseLeave={() => {
+              setTilt({ rotateX: 0, rotateY: 0 });
+            }}
+          >
             {/* Abstract Background Blob */}
             <div className="absolute inset-0 bg-linear-to-br from-orange-500/20 to-pink-600/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
-            <img
+            <motion.img
               src={profileimg}
               alt="Jatin Bisht"
-              className="w-full h-full object-cover rounded-3xl shadow-2xl border border-gray-800/50 rotate-3 hover:rotate-0 transition-transform duration-500"
+              className="w-full h-full object-cover rounded-3xl border border-gray-800/50"
+              style={{
+                transformStyle: "preserve-3d",
+                transition: "all 0.3s ease-out",
+              }}
+              animate={{
+                rotateX: tilt.rotateX,
+                rotateY: tilt.rotateY,
+                scale: tilt.rotateX !== 0 || tilt.rotateY !== 0 ? 1.05 : 1,
+              }}
+              whileHover={{
+                boxShadow:
+                  "0 25px 50px -12px rgba(6, 182, 212, 0.5), 0 0 50px rgba(139, 92, 246, 0.3)",
+              }}
             />
           </div>
         </motion.div>
