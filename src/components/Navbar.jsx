@@ -74,9 +74,9 @@ const Navbar = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
             {/* Logo */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <a href="/" className="text-2xl font-bold primary">
                 Jatin Bisht
               </a>
@@ -152,7 +152,7 @@ const Navbar = () => {
               {activeSection === item.id && (
                 <motion.div
                   layoutId="activeIndicator"
-                  className="absolute bottom-0 h-1 w-12 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-t-full"
+                  className="absolute bottom-0 h-1 w-12 bg-linear-to-r from-cyan-500 to-violet-500 rounded-t-full"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}

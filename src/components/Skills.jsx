@@ -139,7 +139,7 @@ const Skills = () => {
                         duration: 1,
                         delay: categoryIndex * 0.1 + skillIndex * 0.05 + 0.3,
                       }}
-                      className="h-full bg-gradient-to-r from-cyan-500 to-violet-500 rounded-full"
+                      className="h-full bg-linear-to-r from-cyan-500 to-violet-500 rounded-full"
                     />
                   </div>
                 </motion.div>

@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex items-center justify-center text-[var(--text-color)] overflow-hidden relative py-20 md:py-0"
+      className="min-h-screen flex items-center justify-center text-(--text-color) overflow-hidden relative py-20 md:py-0"
       id="hero"
     >
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-7xl">
@@ -46,7 +46,7 @@ const Hero = () => {
           >
             <a
               href="https://drive.google.com/file/d/1l1VpF8fvBMC2Sh6Vj5FJmNX4zNwOyk6L/view?usp=sharing"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-pink-600 text-white font-semibold shadow-lg hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-1"
+              className="px-8 py-3 rounded-full bg-linear-to-r from-orange-500 to-pink-600 text-white font-semibold shadow-lg hover:shadow-orange-500/30 transition-all duration-300 transform hover:-translate-y-1"
             >
               Download CV
             </a>
@@ -68,7 +68,7 @@ const Hero = () => {
         >
           <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px]">
             {/* Abstract Background Blob */}
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-pink-600/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-orange-500/20 to-pink-600/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
             <img
               src={profileimg}

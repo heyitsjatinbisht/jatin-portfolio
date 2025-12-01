@@ -6,10 +6,12 @@ import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Work from "./components/Work";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   return (
     <>
+      <CustomCursor />
       <Navbar />
       <Hero />
       <Skills />
